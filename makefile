@@ -12,6 +12,7 @@ install-packages:
 	sudo apt-get install -y \
 		python \
 		python-dev \
+		python-pip \
 		vim vim-youcompleteme \
 		htop \
 		locate \
@@ -22,7 +23,17 @@ install-packages:
 		unzip \
 		fail2ban \
 		ctags \
+		telnet \
 		cmake
+
+install-pip-packages:
+	sudo pip install httpie
+
+install-node:
+	sudo apt-get install -y nodejs-legacy npm
+	sudo npm cache clean -f
+	sudo npm install -g n
+	sudo n stable
 
 install-docker:
 	echo 'deb https://apt.dockerproject.org/repo debian-jessie main' | sudo tee /etc/apt/sources.list.d/docker.list
